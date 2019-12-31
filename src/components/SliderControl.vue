@@ -15,14 +15,15 @@
 
   .slider-control-bubble {
     display: block;
-    width: 0.75rem;
-    height: 0.75rem;
-    border: 1px solid red;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid #1e90ff;
     border-radius: 50%;
     margin: 0 1rem;
+    cursor: pointer;
 
     &.active {
-      background: red;
+      background: #1e90ff;
     }
   }
 }

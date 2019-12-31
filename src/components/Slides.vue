@@ -6,7 +6,9 @@
     <ul class="slides-wrapper" ref="slides">
       <li v-for="slide in slides" :key="slide.id">
         <transition name="fade">
-          <v-slide :id="slide.id" v-html="slide.node.outerHTML" v-if="slide.isVisible"></v-slide>
+          <div v-if="slide.isVisible">
+            <v-slide :id="slide.id" :key="slide.id" v-html="slide.node.outerHTML"></v-slide>
+          </div>
         </transition>
       </li>
     </ul>
@@ -17,28 +19,82 @@
         @selectedSlide="handleSelectedSlide"
       ></v-slider-control>
     </div>
-    <button v-on:click="handlePrevious">previous</button>
-    <button v-on:click="handleNext">next</button>
-    <button v-on:click="autoPlay">autoplay</button>
+    <!-- <button v-on:click="handlePrevious" class="v-slide-btn prev"></button>
+    <button v-on:click="handleNext" class="v-slide-btn next"></button> -->
   </div>
 </template>
 
 <style lang="scss" scoped>
+.v-slide-btn {
+  position: absolute;
+  width: 6rem;
+  height: 100%;
+  background: rgba($color: #fff, $alpha: .25);
+  border: none;
+  top: 50%;
+  transform: translateY(-50%);
+  outline: none;
+  cursor: pointer;
+
+  &.prev {
+    left: 1rem;
+    font-size: 3rem;
+    color: rgb(46, 46, 46);
+  }
+  &.next {
+    right: 1rem;
+    font-size: 3rem;
+    color: rgb(46, 46, 46);
+  }
+}
+
 .slots-wrapper {
   display: none;
+}
+.slides-container {
+  height: 100%;
+  position: relative;
 }
 .slides-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   list-style: none;
+  height: 90%;
+  position: relative;
+  border: 1px solid #d8d8d8;
+  box-shadow: 0 0 6px 2px rgba($color: #000, $alpha: .1);
+  border-radius: .25rem;
+
+  li {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    padding: .75rem;
+  }
 }
-.fade-enter-active,
-.fade-leave-active {
+
+.slider-control-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1rem;
+}
+
+.fade-enter-active {
   transition: opacity 0.5s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
+}
+
+@keyframes entering {
+  0% {
+  }
+  100% {
+  }
 }
 </style>
 
@@ -47,6 +103,7 @@ import Vue from "vue";
 import Slide from "./Slide.vue";
 import SliderControl from "./SliderControl.vue";
 import nanoid from "nanoid";
+import BackIcon from "./icons/BackIcon.vue";
 
 interface ISlide {
   slidesCount: number;

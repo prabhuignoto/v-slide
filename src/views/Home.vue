@@ -1,18 +1,23 @@
 <template>
   <div class="home">
     <v-slides>
-      <img src="https://images.unsplash.com/photo-1517957754642-2870518e16f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
-      <img src="https://images.unsplash.com/photo-1537616930345-1d330ad3e0a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
-      <img src="https://images.unsplash.com/photo-1430876988766-1be68caef0e4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
-      <p>prabhu</p>
-      <span>In this way, refs can be used just like the document.querySelector('.element') in JavaScript or the $('.element') in jQuery.
-        The $refs can be accessed both inside the Vue.js instance and outside of it. However, they are not data properties, so they are not reactive.</span>
-      <img src="https://images.unsplash.com/photo-1517957754642-2870518e16f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
-      <img src="https://images.unsplash.com/photo-1537616930345-1d330ad3e0a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
-      <img src="https://images.unsplash.com/photo-1430876988766-1be68caef0e4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
+      <img src="https://cdn.pixabay.com/photo/2017/07/24/19/57/tiger-2535888_960_720.jpg">
+      <img src="https://cdn.pixabay.com/photo/2017/09/27/12/55/tiger-2791980_960_720.jpg">
+      <img src="https://cdn.pixabay.com/photo/2017/05/17/12/42/tiger-2320819_960_720.jpg">
+      <img src="https://cdn.pixabay.com/photo/2016/11/29/10/07/animal-1868911_960_720.jpg">
+      <img src="https://cdn.pixabay.com/photo/2017/01/11/19/50/tiger-1972731_960_720.jpg">
+      <img src="https://cdn.pixabay.com/photo/2019/12/15/16/46/tiger-4697538_960_720.jpg">
     </v-slides>
   </div>
 </template>
+
+<style lang="scss" scoped>
+  .home {
+    width: 1200px;
+    height: 900px;
+    margin: 0 auto;
+  }
+</style>
 
 <script lang="ts">
 // @ is an alias to /src
