@@ -1,0 +1,145 @@
+.v-slide-btn {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: rgba($color: #000, $alpha: .5);
+  border: none;
+  top: 50%;
+  transform: translateY(-50%);
+  outline: none;
+  cursor: pointer;
+  z-index: 10;
+
+  .v-slide-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  &.prev {
+    left: 2rem;
+    font-size: 3rem;
+    color: rgb(46, 46, 46);
+  }
+  &.next {
+    right: 2rem;
+    font-size: 3rem;
+    color: rgb(46, 46, 46);
+  }
+}
+
+.slots-wrapper {
+  display: none;
+}
+
+.slides-container {
+  height: 100%;
+  position: relative;
+}
+
+.slides-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  outline: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    padding: .75rem;
+    height: 100%;
+
+    div {
+      height: 100%;
+    }
+  }
+}
+
+.slide-progress-container {
+  margin: 1rem 0;
+}
+
+.slider-control-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+@keyframes show {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+@keyframes hide {
+  100% {
+    height: 100%;
+  }
+  0% {
+    height: 0;
+  }
+}
+// .minimize-enter, .minimize-leave-to /* .fade-leave-active below version 2.1.8 */ {
+//   opacity: 0;
+// }
+
+.slide-control-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .slider-bubble-progress-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.slider-preview-pane-container {
+  width: 95%;
+  height: 14rem;
+  overflow: hidden;
+  bottom: 1rem;
+  z-index: 999;
+  background-color: #ddd;
+  box-shadow: inset 0 0 10px 4px #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.slides-main-container {
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  
+  border: 1px solid #d8d8d8;
+  box-shadow: 0 0 6px 2px rgba($color: #000, $alpha: .1);
+  border-radius: .25rem;
+}

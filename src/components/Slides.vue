@@ -3,99 +3,58 @@
     <div class="slots-wrapper">
       <slot></slot>
     </div>
-    <ul class="slides-wrapper" ref="slides">
-      <li v-for="slide in slides" :key="slide.id">
+    <div class="slides-main-container">
+      <ul
+        class="slides-wrapper"
+        ref="slides"
+        @keyup.left="handlePrevious"
+        @keyup.right="handleNext"
+        tabindex="0"
+      >
+        <li v-for="slide in slides" :key="slide.id">
+          <transition name="fade">
+            <div v-if="slide.isVisible">
+              <v-slide :id="slide.id" :key="slide.id" v-html="slide.node.outerHTML"></v-slide>
+            </div>
+          </transition>
+        </li>
+      </ul>
+      <div class="slider-preview-pane-container" v-if="isPreviewPaneOpen">
         <transition name="fade">
-          <div v-if="slide.isVisible">
-            <v-slide :id="slide.id" :key="slide.id" v-html="slide.node.outerHTML"></v-slide>
-          </div>
+            <v-slide-preview :slides="slides" @selectedSlide="handleSelectedSlide"></v-slide-preview>
         </transition>
-      </li>
-    </ul>
-    <div class="slider-control-container">
-      <v-slider-control
-        v-bind:slidesCount="slidesCount"
-        v-bind:activeSlide="activeSlide"
-        @selectedSlide="handleSelectedSlide"
-      ></v-slider-control>
+      </div>
     </div>
-    <!-- <button v-on:click="handlePrevious" class="v-slide-btn prev"></button>
-    <button v-on:click="handleNext" class="v-slide-btn next"></button> -->
+    <div class="slide-progress-container">
+      <v-slide-progress :slidesCount="slidesCount" :activeSlide="activeSlide + 1"></v-slide-progress>
+    </div>
+    <div class="slide-control-bar">
+      <div class="slideshow-control-container">
+        <v-slideshow-control @slideShow="handleSlideshow" @previewPane="handlePreviewPane"></v-slideshow-control>
+      </div>
+      <div class="slider-bubble-progress-container">
+        <v-slider-control
+          v-bind:slidesCount="slidesCount"
+          v-bind:activeSlide="activeSlide"
+          @selectedSlide="handleSelectedSlide"
+        ></v-slider-control>
+      </div>
+    </div>
+    <transition name="fade">
+      <button v-on:click="handlePrevious" class="v-slide-btn prev" v-if="canShowPrevious">
+        <IosArrowBackIcon :style="{fill: '#fff'}" class="v-slide-icon"/>
+      </button>
+    </transition>
+    <transition name="fade">
+      <button v-on:click="handleNext" class="v-slide-btn next" v-if="canShowNext">
+        <IosArrowForwardIcon :style="{fill: '#fff'}" class="v-slide-icon" />
+      </button>
+    </transition>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.v-slide-btn {
-  position: absolute;
-  width: 6rem;
-  height: 100%;
-  background: rgba($color: #fff, $alpha: .25);
-  border: none;
-  top: 50%;
-  transform: translateY(-50%);
-  outline: none;
-  cursor: pointer;
-
-  &.prev {
-    left: 1rem;
-    font-size: 3rem;
-    color: rgb(46, 46, 46);
-  }
-  &.next {
-    right: 1rem;
-    font-size: 3rem;
-    color: rgb(46, 46, 46);
-  }
-}
-
-.slots-wrapper {
-  display: none;
-}
-.slides-container {
-  height: 100%;
-  position: relative;
-}
-.slides-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  list-style: none;
-  height: 90%;
-  position: relative;
-  border: 1px solid #d8d8d8;
-  box-shadow: 0 0 6px 2px rgba($color: #000, $alpha: .1);
-  border-radius: .25rem;
-
-  li {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-    right: 0;
-    padding: .75rem;
-  }
-}
-
-.slider-control-container {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 1rem;
-}
-
-.fade-enter-active {
-  transition: opacity 0.5s;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
-}
-
-@keyframes entering {
-  0% {
-  }
-  100% {
-  }
-}
+@import "@/styles/slides.scss";
 </style>
 
 <script lang="ts">
@@ -104,26 +63,50 @@ import Slide from "./Slide.vue";
 import SliderControl from "./SliderControl.vue";
 import nanoid from "nanoid";
 import BackIcon from "./icons/BackIcon.vue";
+import SlideProgress from "./SlideProgress.vue";
+import SlideShowControl from "./SlideShowControl.vue";
+import SlidePreviewPane from "./SlidePreviewPane.vue";
+import IosArrowBackIcon from "vue-ionicons/dist/ios-arrow-back.vue";
+import IosArrowForwardIcon from "vue-ionicons/dist/ios-arrow-forward.vue";
 
-interface ISlide {
+interface ISlideData {
   slidesCount: number;
   slides: Array<{ id: string; node: Element; isVisible: boolean }>;
   activeSlide: number;
+  isSlideshowRunning: boolean;
+  intervalHandle: any;
+  canShowNavControls: boolean;
+  isPreviewPaneOpen: boolean;
+}
+
+interface ISlideOptions {
+  title: string;
+  isCircular: boolean;
 }
 
 export default Vue.component("v-slides", {
   props: {
     title: String,
+    isCircular: Boolean
   },
   components: {
     Slide,
     SliderControl,
+    SlideProgress,
+    SlideShowControl,
+    SlidePreviewPane,
+    IosArrowBackIcon,
+    IosArrowForwardIcon
   },
-  data(): ISlide {
+  data(): ISlideData {
     return {
       slidesCount: 0,
       slides: [],
       activeSlide: 0,
+      isSlideshowRunning: false,
+      isPreviewPaneOpen: false,
+      intervalHandle: null,
+      canShowNavControls: false
     };
   },
   mounted() {
@@ -138,8 +121,8 @@ export default Vue.component("v-slides", {
             (val, index) => ({
               id: nanoid(),
               node: slotContents[index],
-              isVisible: index === 0,
-            }),
+              isVisible: index === 0
+            })
           );
           while (slotsWrapper.firstChild) {
             slotsWrapper.removeChild(slotsWrapper.firstChild);
@@ -148,34 +131,70 @@ export default Vue.component("v-slides", {
       }
     }
   },
+  computed: {
+    canShowPrevious(): boolean {
+      if (!this.isCircular) {
+        return this.activeSlide > 0;
+      } else {
+        return true;
+      }
+    },
+    canShowNext(): boolean {
+      if (!this.isCircular) {
+        return this.activeSlide < this.slidesCount - 1;
+      } else {
+        return true;
+      }
+    }
+  },
   methods: {
     autoPlay() {
-      setInterval(() => {
-        this.handleNext();
+      this.intervalHandle = setInterval(() => {
+        if (this.isSlideshowRunning) {
+          this.handleNext();
+        }
       }, 2000);
     },
     updateActiveSlide(idx: number) {
       this.activeSlide = this.activeSlide + idx;
       this.slides = this.slides.map((slide, index) => {
         return Object.assign({}, slide, {
-          isVisible: this.activeSlide === index,
+          isVisible: this.activeSlide === index
         });
       });
     },
     handleNext() {
       if (this.activeSlide < this.slidesCount - 1) {
         this.updateActiveSlide(+1);
+      } else if (this.isCircular) {
+        // move to the first slide
+        this.updateActiveSlide(-(this.slidesCount - 1));
       }
     },
     handlePrevious() {
       if (this.activeSlide > 0) {
         this.updateActiveSlide(-1);
+      } else if (this.isCircular) {
+        // move to the last slide
+        this.updateActiveSlide(this.slidesCount - 1);
       }
     },
     handleSelectedSlide(index: number) {
       this.activeSlide = index - 1;
       this.updateActiveSlide(0);
     },
-  },
+    handleSlideshow(paused: boolean) {
+      this.isSlideshowRunning = !paused;
+
+      if (!paused) {
+        this.autoPlay();
+      } else if (this.intervalHandle) {
+        clearInterval(this.intervalHandle);
+      }
+    },
+    handlePreviewPane(open: boolean) {
+      this.isPreviewPaneOpen = open;
+    }
+  }
 });
 </script>

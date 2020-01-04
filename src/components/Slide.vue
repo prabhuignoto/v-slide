@@ -15,6 +15,15 @@
       width: 100%;
       height: 100%;
     }
+
+    & > img {
+      max-height: 100%;
+      max-width: 100%;
+      position: relative;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      object-fit: contain;
+    }
   }
 </style>
 
