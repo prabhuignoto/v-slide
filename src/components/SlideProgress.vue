@@ -7,11 +7,12 @@
 <style lang="scss" scoped>
   .slide-progress-container {
     width: 100%;
-    background: #d6d6d6;
-    height: .2rem;
+    background: #fff;
+    height: .25rem;
 
     span {
       background: #1e90ff;
+      
       display: block;
       height: 100%;
       transition: width .65s ease-in-out;

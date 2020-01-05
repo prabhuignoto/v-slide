@@ -1,5 +1,8 @@
 <template>
   <div class="slide-preview-main">
+    <button @click="handleRight" class="right slide-preview-btn">
+      <IosArrowForwardIcon />
+    </button>
     <ul class="slide-preview-pane-wrapper" ref="pane">
       <li
         v-for="(slide, index) in slides"
@@ -14,9 +17,6 @@
         ></div>
       </li>
     </ul>
-    <button @click="handleRight" class="right slide-preview-btn">
-      <IosArrowForwardIcon />
-    </button>
     <button @click="handleLeft" class="left slide-preview-btn">
       <IosArrowBackIcon />
     </button>
@@ -28,6 +28,7 @@
   width: 100%;
   height: 100%;
   position: relative;
+  display: flex;
 
   .left {
     left: 0;
@@ -47,6 +48,7 @@
   margin: 0;
   overflow: hidden;
   scroll-behavior: smooth;
+  padding: 0 0.5rem;
 
   li {
     height: 100%;
@@ -65,10 +67,11 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      border-radius: 0.3rem;
+      box-shadow: 0 0 8px 4px rgba($color: #000, $alpha: 0.4);
 
       &.active {
-        box-shadow: 0 0 8px 4px rgba($color: #000, $alpha: 0.35);
-        outline: 2px solid #1e90ff;
+        box-shadow: 0 0 6px 4px rgba($color: #000, $alpha: 0.6);
       }
 
       & > img {
@@ -86,22 +89,19 @@
 .slide-preview-btn {
   border: none;
   background: none;
-  width: 3rem;
+  width: 4rem;
   height: 100%;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   outline: none;
   cursor: pointer;
-
-  background: rgba($color: #000, $alpha: 0.5);
   padding: 0;
   margin: 0;
+  background: #fff;
+  box-shadow: 0 0 10px 4px rgba($color: #000, $alpha: 0.2);
 
   svg {
     width: 100%;
     height: 100%;
-    fill: #ccc;
+    fill: #1e90ff;
   }
 }
 </style>
