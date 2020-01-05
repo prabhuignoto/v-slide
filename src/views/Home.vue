@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <v-slides :isCircular="true">
+    <v-slides :isCircular="true" :slideShowSpeed="5000">
       <img :src="'redwood-national-park-1587301_1280.jpg'">
       <img :src="'italy-1587287_1280.jpg'">
       <img :src="'dawn-190055_1280.jpg'">
@@ -14,8 +14,8 @@
 
 <style lang="scss" scoped>
   .home {
-    width: 1200px;
-    height: 800px;
+    width: 80rem;
+    height: 50rem;
     margin: 0 auto;
   }
 </style>

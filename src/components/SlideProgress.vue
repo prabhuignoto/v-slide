@@ -9,8 +9,10 @@
     width: 100%;
     background: #fff;
     height: .25rem;
+    border-radius: .2rem;
 
     span {
+      border-radius: .2rem;
       background: #1e90ff;
       
       display: block;

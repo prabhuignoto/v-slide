@@ -18,12 +18,12 @@
   .slider-control-bubble {
     display: block;
     cursor: pointer;
-    width: .75rem;
-    height: .75rem;
+    width: 0.75rem;
+    height: 0.75rem;
     border-radius: 50%;
     margin: 1rem;
     background: #d6d6d6;
-    transition: transform .2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
 
     &.active {
       background: #1e90ff;

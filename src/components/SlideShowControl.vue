@@ -12,9 +12,11 @@
         </button>
       </li>
       <li>
-        <button @click="togglePreviewPane">
-          <IosPhotosIcon w="2rem" h="2rem" :style="{fill: iconColor(this.previewPaneOpen)}" />
-        </button>
+        <transition name="fade">
+          <button @click="togglePreviewPane" v-show="paused">
+            <IosPhotosIcon w="2rem" h="2rem" :style="{fill: iconColor(this.previewPaneOpen)}" />
+          </button>
+        </transition>
       </li>
     </ul>
   </div>
@@ -49,12 +51,12 @@ export default Vue.component("v-slideshow-control", {
   components: {
     IosPauseIcon,
     IosPlayIcon,
-    IosPhotosIcon,
+    IosPhotosIcon
   },
   data() {
     return {
       paused: true,
-      previewPaneOpen: false,
+      previewPaneOpen: false
     };
   },
   methods: {
@@ -72,8 +74,8 @@ export default Vue.component("v-slideshow-control", {
       } else {
         return "#ccc";
       }
-    },
-  },
+    }
+  }
 });
 </script>
 

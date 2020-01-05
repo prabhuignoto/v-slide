@@ -1,7 +1,7 @@
 <template>
   <div class="slide-preview-main">
-    <button @click="handleRight" class="right slide-preview-btn">
-      <IosArrowForwardIcon />
+    <button @click="handleLeft" class="left slide-preview-btn">
+      <IosArrowBackIcon />
     </button>
     <ul class="slide-preview-pane-wrapper" ref="pane">
       <li
@@ -17,8 +17,8 @@
         ></div>
       </li>
     </ul>
-    <button @click="handleLeft" class="left slide-preview-btn">
-      <IosArrowBackIcon />
+    <button @click="handleRight" class="right slide-preview-btn">
+      <IosArrowForwardIcon />
     </button>
   </div>
 </template>
@@ -39,48 +39,49 @@
 }
 
 .slide-preview-pane-wrapper {
-  height: 100%;
-  width: 100%;
-  list-style: none;
-  display: flex;
   align-items: center;
+  display: flex;
+  height: 100%;
   justify-content: flex-start;
+  list-style: none;
   margin: 0;
   overflow: hidden;
-  scroll-behavior: smooth;
   padding: 0 0.5rem;
+  scroll-behavior: smooth;
+  width: 100%;
 
   li {
-    height: 100%;
-    margin: 0;
-    margin-right: 0.5rem;
-    flex: 1;
-    padding: 0.25rem;
-    display: flex;
     align-items: center;
+    display: flex;
+    flex: 1;
+    height: 100%;
+    margin-right: 0.5rem;
+    margin: 0;
+    padding: 0.25rem;
 
     div.slide-preview-pane {
-      height: 8rem;
-      width: 14rem;
-      border: 2px solid transparent;
-      display: flex;
       align-items: center;
+      border-radius: 0.3rem;
+      border: 2px solid transparent;
+      box-shadow: 0 0 8px 4px rgba($color: #ccc, $alpha: 0.4);
+      cursor: pointer;
+      display: flex;
+      height: 8rem;
       justify-content: center;
       overflow: hidden;
-      border-radius: 0.3rem;
-      box-shadow: 0 0 8px 4px rgba($color: #000, $alpha: 0.4);
+      width: 14rem;
 
       &.active {
-        box-shadow: 0 0 6px 4px rgba($color: #000, $alpha: 0.6);
+        box-shadow: 0 0 8px 4px rgba($color: #000, $alpha: 0.4);
       }
 
       & > img {
-        height: 100%;
-        width: 100%;
-        position: relative;
         background-position: 50% 50%;
         background-repeat: no-repeat;
         background-size: cover;
+        height: 100%;
+        position: relative;
+        width: 100%;
       }
     }
   }
@@ -89,7 +90,7 @@
 .slide-preview-btn {
   border: none;
   background: none;
-  width: 4rem;
+  width: 3rem;
   height: 100%;
   outline: none;
   cursor: pointer;
@@ -118,14 +119,14 @@ interface ISlide {
 export default Vue.component("v-slide-preview", {
   components: {
     IosArrowBackIcon,
-    IosArrowForwardIcon
+    IosArrowForwardIcon,
   },
   props: {
-    slides: Array
+    slides: Array,
   },
   data() {
     return {
-      activeSlide: 0
+      activeSlide: 0,
     };
   },
   methods: {
@@ -142,7 +143,7 @@ export default Vue.component("v-slide-preview", {
     handleSelection(idx: number) {
       this.$emit("selectedSlide", idx + 1);
       this.activeSlide = idx;
-    }
-  }
+    },
+  },
 });
 </script>

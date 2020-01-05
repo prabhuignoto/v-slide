@@ -4,6 +4,7 @@
       <slot></slot>
     </div>
     <div class="slides-main-container">
+      <header></header>
       <ul
         class="slides-wrapper"
         :class="{isPreviewPaneOpen: isPreviewPaneOpen, isPreviewPaneClosed: !isPreviewPaneOpen}"
@@ -25,6 +26,7 @@
           <v-slide-preview :slides="slides" @selectedSlide="handleSelectedSlide"></v-slide-preview>
         </div>
       </transition>
+      <footer></footer>
     </div>
     <div class="slide-progress-container">
       <v-slide-progress :slidesCount="slidesCount" :activeSlide="activeSlide + 1"></v-slide-progress>
@@ -89,6 +91,7 @@ export default Vue.component("v-slides", {
   props: {
     title: String,
     isCircular: Boolean,
+    slideShowSpeed: Number,
   },
   components: {
     Slide,
@@ -154,7 +157,7 @@ export default Vue.component("v-slides", {
         if (this.isSlideshowRunning) {
           this.handleNext();
         }
-      }, 2000);
+      }, this.slideShowSpeed || 2000);
     },
     updateActiveSlide(idx: number) {
       this.activeSlide = this.activeSlide + idx;
