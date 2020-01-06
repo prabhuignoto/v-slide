@@ -78,9 +78,11 @@
 
   &.isPreviewPaneOpen {
     animation: minimize-slide .4s linear;
+    height: calc(100%-14rem);
   }
   &.isPreviewPaneClosed {
     animation: maximize-slide .4s linear;
+    height: 100%;
   }
 }
 
