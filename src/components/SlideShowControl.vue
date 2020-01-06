@@ -51,12 +51,12 @@ export default Vue.component("v-slideshow-control", {
   components: {
     IosPauseIcon,
     IosPlayIcon,
-    IosPhotosIcon
+    IosPhotosIcon,
   },
   data() {
     return {
       paused: true,
-      previewPaneOpen: false
+      previewPaneOpen: false,
     };
   },
   methods: {
@@ -74,8 +74,8 @@ export default Vue.component("v-slideshow-control", {
       } else {
         return "#ccc";
       }
-    }
-  }
+    },
+  },
 });
 </script>
 
