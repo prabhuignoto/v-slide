@@ -7,30 +7,7 @@
 </template>
 
 <style lang="scss" scoped>
-.slider-control-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-
-  .slider-control-bubble {
-    display: block;
-    cursor: pointer;
-    width: 0.75rem;
-    height: 0.75rem;
-    border-radius: 50%;
-    margin: 1rem;
-    background: #d6d6d6;
-    transition: transform 0.2s ease-in-out;
-
-    &.active {
-      background: #1e90ff;
-      transform: scale(1.25);
-    }
-  }
-}
+  @import '@/styles/slider-control';
 </style>
 
 <script lang="ts">

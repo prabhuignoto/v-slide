@@ -1,5 +1,11 @@
+@import './palette';
+
+$slide-btn-bg: rgba($color: #000, $alpha: .6);
+$control-bar-shadow: 0 0 10px 4px rgba(0, 0, 0, .1);
+$container-shadow: 0 0 6px 2px rgba($color: #000, $alpha: .1);
+
 .v-slide-btn {
-  background: rgba($color: #000, $alpha: .6);
+  background: $slide-btn-bg;
   border: 0;
   border-radius: 50%;
   cursor: pointer;
@@ -37,7 +43,7 @@
   }
 
   svg {
-    fill: #1e90ff;
+    fill: $blue;
   }
 }
 
@@ -156,9 +162,9 @@
 
 .slide-control-bar {
   align-items: center;
-  background: #fff;
+  background: $white;
   border-radius: 4px;
-  box-shadow: 0 0 10px 4px rgba(0, 0, 0, .1);
+  box-shadow: $control-bar-shadow;
   display: flex;
   justify-content: center;
   padding: .5rem;
@@ -183,10 +189,10 @@
 
 .slides-main-container {
   align-items: center;
-  background: #fff;
-  border: 1px solid #d8d8d8;
+  background: $white;
+  border: 1px solid $d2-gray;
   border-radius: .25rem;
-  box-shadow: 0 0 6px 2px rgba($color: #000, $alpha: .1);
+  box-shadow: $container-shadow;
   display: flex;
   flex-direction: column;
   height: 100%;

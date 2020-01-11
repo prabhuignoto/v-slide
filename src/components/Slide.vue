@@ -5,23 +5,7 @@
 </template>
 
 <style lang="scss">
-.slide-container {
-  width: 100%;
-  height: 100%;
-  & > * {
-    width: 100%;
-    height: 100%;
-  }
-
-  & > img {
-    max-height: 100%;
-    max-width: 100%;
-    position: relative;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    object-fit: contain;
-  }
-}
+  @import '@/styles/slide';
 </style>
 
 <script lang="ts">

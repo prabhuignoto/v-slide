@@ -23,22 +23,7 @@
 </template>
 
 <style lang="scss">
-.v-slideshow-controls {
-  display: flex;
-  list-style: none;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-
-  button {
-    border: none;
-    outline: none;
-    cursor: pointer;
-    transform: scale(1);
-    background: none;
-  }
-}
+  @import "@/styles/slideshow-control";
 </style>
 
 <script lang="ts">

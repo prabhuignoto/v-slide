@@ -1,0 +1,86 @@
+@import './palette';
+$pane-shadow: 0 0 8px 4px rgba($color: $c-gray, $alpha: .4);
+$active-pane-shadow: 0 0 8px 4px rgba($color: #000, $alpha: .4);
+$preview-btn-shadow: 0 0 10px 4px rgba($color: #000, $alpha: .2);
+
+.slide-preview-main {
+  display: flex;
+  height: 100%;
+  position: relative;
+  width: 100%;
+
+  .left {
+    left: 0;
+  }
+
+  .right {
+    right: 0;
+  }
+}
+
+.slide-preview-pane-wrapper {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: flex-start;
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0 .5rem;
+  scroll-behavior: smooth;
+  width: 100%;
+
+  li {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    height: 100%;
+    margin: 0;
+    margin-right: .5rem;
+    padding: .25rem;
+  }
+
+  .slide-preview-pane {
+    align-items: center;
+    border: 2px solid transparent;
+    border-radius: .3rem;
+    box-shadow: $pane-shadow;
+    cursor: pointer;
+    display: flex;
+    height: 8rem;
+    justify-content: center;
+    overflow: hidden;
+    width: 14rem;
+
+    &.active {
+      box-shadow: $active-pane-shadow;
+    }
+
+    & > img {
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100%;
+      position: relative;
+      width: 100%;
+    }
+  }
+}
+
+.slide-preview-btn {
+  background: $white;
+  border: 0;
+  box-shadow: $preview-btn-shadow;
+  cursor: pointer;
+  height: 100%;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  width: 3rem;
+
+  svg {
+    fill: $blue;
+    height: 100%;
+    width: 100%;
+  }
+}

@@ -5,21 +5,7 @@
 </template>
   
 <style lang="scss" scoped>
-  .slide-progress-container {
-    width: 100%;
-    background: #fff;
-    height: .25rem;
-    border-radius: .2rem;
-
-    span {
-      border-radius: .2rem;
-      background: #1e90ff;
-      
-      display: block;
-      height: 100%;
-      transition: width .65s ease-in-out;
-    }
-  }
+  @import "@/styles/slide-progress";
 </style>
 
 <script lang="ts">
