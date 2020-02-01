@@ -86,6 +86,7 @@ $container-shadow: 0 0 6px 2px rgba($color: #000, $alpha: .1);
     animation: minimize-slide .4s linear;
     height: calc(100%-14rem);
   }
+
   &.isPreviewPaneClosed {
     animation: maximize-slide .4s linear;
     height: 100%;
@@ -166,6 +167,7 @@ $container-shadow: 0 0 6px 2px rgba($color: #000, $alpha: .1);
   border-radius: 4px;
   box-shadow: $control-bar-shadow;
   display: flex;
+  height: 5%;
   justify-content: center;
   padding: .5rem;
 
@@ -195,7 +197,7 @@ $container-shadow: 0 0 6px 2px rgba($color: #000, $alpha: .1);
   box-shadow: $container-shadow;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 90%;
   position: relative;
   width: 100%;
 

@@ -14,8 +14,8 @@
 
 <style lang="scss" scoped>
   .home {
-    width: 80vh;
-    height: 65vh;
+    width: 50vw;
+    height: 60vh;
     margin: 0 auto;
   }
 </style>
