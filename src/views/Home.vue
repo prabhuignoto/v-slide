@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <v-slides :isCircular="true" :slideShowSpeed="5000">
-      <img :src="'aleksey-kuprikov-tyrsoo-unsplash.jpg'">
+      <img :src="'chris-pickett.jpg'">
       <img :src="'willian-justen.jpg'">
       <img :src="'ricardo-resende.jpg'">
       <img :src="'emre-ozturk.jpg'">
