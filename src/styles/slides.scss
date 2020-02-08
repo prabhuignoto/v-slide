@@ -78,6 +78,7 @@ $container-shadow: 0 0 6px 2px rgba($color: #000, $alpha: .1);
     transform: translateY(-50%);
 
     div {
+      background: $black;
       height: 100%;
     }
   }

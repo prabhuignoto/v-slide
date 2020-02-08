@@ -16,7 +16,7 @@
         <li v-for="slide in slides" :key="slide.id">
           <transition name="fade">
             <div v-if="slide.isVisible">
-              <v-slide :id="slide.id" :key="slide.id" v-html="slide.node.outerHTML" :previewPaneOpen="isPreviewPaneOpen"></v-slide>
+              <v-slide :id="slide.id" :key="slide.id" :htmlContent="slide.node.outerHTML" :previewPaneOpen="isPreviewPaneOpen"></v-slide>
             </div>
           </transition>
         </li>

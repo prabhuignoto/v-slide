@@ -1,21 +1,39 @@
-@import './palette';
+@import "./palette";
 
 .slide-container {
-  background: #000;
+  background: $black;
   height: 100%;
   width: 100%;
+
+  .image-slot-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    img {
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      position: relative;
+    }
+  }
 
   & > * {
     height: 100%;
     width: 100%;
   }
+}
 
-  & > img {
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: contain;
-    position: relative;
-  }
+.loader-wrapper {
+  height: 4rem;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4rem;
 }
