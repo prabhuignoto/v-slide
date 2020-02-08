@@ -29,17 +29,19 @@
           </i>
           <span>Progress Track</span>
         </li>
-        <li>
-          <i>
-            <img src="tick.svg" />
-          </i>
-          <span>Made with Vue</span>
-        </li>
       </ul>
     </section>
     <div class="router-container">
       <router-view />
     </div>
+    <!-- <section>
+      <div class="github">
+        <a href="">GitHub</a>
+      </div>
+      <div class="copyrights">
+        <span>&copy;</span> <a href="">prabhumurthy.com</a>
+      </div>
+    </section> -->
   </div>
 </template>
 
@@ -52,8 +54,7 @@ export default Vue.extend({});
 
 <style lang="scss">
 .router-container {
-  height: 100%;
-  width: 100%;
+  width: 65%;
 }
 .feature-set {
   margin-bottom: 4rem;
@@ -61,15 +62,16 @@ export default Vue.extend({});
 .feature-list {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   list-style: none;
   padding: 0;
-  width: 60%;
+  width: 100%;
   margin: 0 auto;
 
   li {
     display: flex;
     align-items: center;
+    margin: 0 1.5rem;
 
     span {
       font-family: "Montserrat", sans-serif;
@@ -99,12 +101,36 @@ export default Vue.extend({});
     margin-bottom: 3rem;
   }
 }
+footer {
+  display: flex;
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .github {
+    margin-right: 2rem;
+  }
+  .copyrights {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  overflow-y: auto;
 
   align-items: center;
   justify-content: center;
@@ -114,6 +140,9 @@ export default Vue.extend({});
   background: #6190e8; /* fallback for old browsers */
   background-color: #8bc6ec;
   background-image: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
+
+  display: flex;
+  flex-direction: column;
 }
 
 #nav {

@@ -13,8 +13,8 @@
 
 <style lang="scss" scoped>
   .home {
-    width: 70%;
-    height: 70%;
+    width: 100%;
+    height: 850px;
     margin: 0 auto;
   }
 </style>
