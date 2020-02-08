@@ -1,21 +1,21 @@
 <template>
   <div class="home">
     <v-slides :isCircular="true" :slideShowSpeed="5000">
-      <img :src="'redwood-national-park-1587301_1280.jpg'">
-      <img :src="'italy-1587287_1280.jpg'">
-      <img :src="'dawn-190055_1280.jpg'">
-      <img :src="'tree-3822149_1280.jpg'">
-      <img :src="'hintersee-3601004_1280.jpg'">
-      <img :src="'mountain-landscape-2031539_1280.jpg'">
-      <img :src="'mountain-1244132_1280.jpg'">
+      <img :src="'aleksey-kuprikov-tyrsoo-unsplash.jpg'">
+      <img :src="'willian-justen.jpg'">
+      <img :src="'ricardo-resende.jpg'">
+      <img :src="'emre-ozturk.jpg'">
+      <img :src="'asoggetti.jpg'">
+      <img :src="'aleksey.jpg'">
+      <img :src="'tim-mossholder.jpg'">
     </v-slides>
   </div>
 </template>
 
 <style lang="scss" scoped>
   .home {
-    width: 50vw;
-    height: 60vh;
+    width: 50%;
+    height: 70%;
     margin: 0 auto;
   }
 </style>

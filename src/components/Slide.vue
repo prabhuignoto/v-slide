@@ -19,6 +19,7 @@ export default Vue.component("v-slide", {
   },
   props: {
     id: String,
+    previewPaneOpen: Boolean,
   },
 });
 </script>

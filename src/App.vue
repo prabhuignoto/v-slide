@@ -1,17 +1,28 @@
 <template>
   <div id="app">
+    <header class="app-header">
+      <h2 class="header">V-Slide</h2>
+    </header>
     <router-view />
   </div>
 </template>
 
 
 <script lang="ts">
-  import Vue from "vue";
+import Vue from "vue";
 
-  export default Vue.extend({});
+export default Vue.extend({});
 </script>
 
 <style lang="scss">
+.app-header {
+  margin: 0;
+  padding: 1rem 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  font-size: 1.75rem;
+
+}
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -19,23 +30,14 @@
   text-align: center;
   color: #2c3e50;
 
-  display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
 
   /* background: #acb6e5; */
   background: #6190e8; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to top,
-    #a7bfe8,
-    #1e90ff
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to top,
-    #a7bfe8,
-    #1e90ff
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-color: #8bc6ec;
+  background-image: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
 }
 
 #nav {
@@ -53,6 +55,6 @@
 
 body {
   padding: 0;
-  margin: 0;  
+  margin: 0;
 }
 </style>
