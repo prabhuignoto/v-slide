@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <v-slides :isCircular="true" :slideShowSpeed="5000">
-      <img :src="'chris-pickett.jpg'">
       <img :src="'willian-justen.jpg'">
       <img :src="'ricardo-resende.jpg'">
       <img :src="'emre-ozturk.jpg'">
@@ -14,7 +13,7 @@
 
 <style lang="scss" scoped>
   .home {
-    width: 50%;
+    width: 70%;
     height: 70%;
     margin: 0 auto;
   }
