@@ -133,7 +133,7 @@ footer {
   overflow-y: auto;
 
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   height: 100%;
 
   /* background: #acb6e5; */
