@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <v-slides :isCircular="true" :slideShowSpeed="5000">
+    <v-slides :isCircular="true" :slideShowSpeed="2000">
       <img
         :src="'https://images.unsplash.com/photo-1581094935665-144e76b36c25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjc5NjV9&auto=format&fit=crop&w=1950&q=80'"
       />
