@@ -47,10 +47,10 @@ $preview-btn-shadow: 0 0 10px 4px rgba($color: #000, $alpha: .2);
     box-shadow: $pane-shadow;
     cursor: pointer;
     display: flex;
-    height: 8rem;
+    height: 10rem;
     justify-content: center;
     overflow: hidden;
-    width: 14rem;
+    width: 16rem;
 
     &.active {
       box-shadow: $active-pane-shadow;
