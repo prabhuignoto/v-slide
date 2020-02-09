@@ -15,6 +15,10 @@
   @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     width: 85%;
   }
+
+  @media screen and (min-width: 1600px), screen and (min-width: 1400px) {
+    width: 50%;
+  }
 }
 
 .router-container {
@@ -26,7 +30,7 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  margin: 1rem 0;
+  margin: 2rem 0;
   width: 100%;
 }
 

@@ -33,7 +33,7 @@
   margin: 0 auto;
 
   @media (min-width: 1281px) {
-    height: 950px;
+    height: 850px;
   }
 
   @media (min-width: 1025px) and (max-width: 1280px) {
