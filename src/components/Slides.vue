@@ -13,13 +13,20 @@
         @keyup.right="handleNext"
         tabindex="0"
       >
-        <li v-for="slide in slides" :key="slide.id">
-          <transition name="fade">
-            <div v-if="slide.isVisible">
-              <v-slide :id="slide.id" :key="slide.id" :htmlContent="slide.node.outerHTML" :previewPaneOpen="isPreviewPaneOpen"></v-slide>
-            </div>
-          </transition>
-        </li>
+        <v-touch v-on:swipeleft="handleNext" v-on:swiperight="handlePrevious">
+          <li v-for="slide in slides" :key="slide.id">
+            <transition name="fade">
+              <div v-if="slide.isVisible">
+                <v-slide
+                  :id="slide.id"
+                  :key="slide.id"
+                  :htmlContent="slide.node.outerHTML"
+                  :previewPaneOpen="isPreviewPaneOpen"
+                ></v-slide>
+              </div>
+            </transition>
+          </li>
+        </v-touch>
       </ul>
       <transition name="show">
         <div class="slider-preview-pane-container" v-show="isPreviewPaneOpen">
@@ -91,7 +98,7 @@ export default Vue.component("v-slides", {
   props: {
     title: String,
     isCircular: Boolean,
-    slideShowSpeed: Number,
+    slideShowSpeed: Number
   },
   components: {
     Slide,
@@ -100,7 +107,7 @@ export default Vue.component("v-slides", {
     SlideShowControl,
     SlidePreviewPane,
     IosArrowBackIcon,
-    IosArrowForwardIcon,
+    IosArrowForwardIcon
   },
   data(): ISlideData {
     return {
@@ -110,7 +117,7 @@ export default Vue.component("v-slides", {
       isSlideshowRunning: false,
       isPreviewPaneOpen: false,
       intervalHandle: null,
-      canShowNavControls: false,
+      canShowNavControls: false
     };
   },
   mounted() {
@@ -125,8 +132,8 @@ export default Vue.component("v-slides", {
             (val, index) => ({
               id: nanoid(),
               node: slotContents[index],
-              isVisible: index === 0,
-            }),
+              isVisible: index === 0
+            })
           );
           while (slotsWrapper.firstChild) {
             slotsWrapper.removeChild(slotsWrapper.firstChild);
@@ -149,7 +156,7 @@ export default Vue.component("v-slides", {
       } else {
         return true;
       }
-    },
+    }
   },
   methods: {
     autoPlay() {
@@ -163,7 +170,7 @@ export default Vue.component("v-slides", {
       this.activeSlide = this.activeSlide + idx;
       this.slides = this.slides.map((slide, index) => {
         return Object.assign({}, slide, {
-          isVisible: this.activeSlide === index,
+          isVisible: this.activeSlide === index
         });
       });
     },
@@ -199,7 +206,7 @@ export default Vue.component("v-slides", {
     },
     handlePreviewPane(open: boolean) {
       this.isPreviewPaneOpen = open;
-    },
-  },
+    }
+  }
 });
 </script>

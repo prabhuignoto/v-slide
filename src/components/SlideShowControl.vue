@@ -30,7 +30,7 @@
 import Vue from "vue";
 import IosPauseIcon from "vue-ionicons/dist/ios-pause.vue";
 import IosPlayIcon from "vue-ionicons/dist/ios-play.vue";
-import IosPhotosIcon from "vue-ionicons/dist/ios-photos.vue";
+import IosPhotosIcon from "vue-ionicons/dist/md-albums.vue";
 
 export default Vue.component("v-slideshow-control", {
   components: {

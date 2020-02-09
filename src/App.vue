@@ -2,6 +2,20 @@
   <div id="app">
     <header class="app-header">
       <h2 class="header">V-Slide</h2>
+      <div class="social">
+        <div class="github">
+          <span>
+            <GithubIcon></GithubIcon>
+          </span>
+          <a href="https://github.com/prabhuignoto" target="_blank">Github</a>
+        </div>
+        <div class="copyrights">
+          <span>
+            <Heart />
+          </span>
+          <a href="https://prabhumurthy.netlify.com" target="_blank">prabhumurthy.com</a>
+        </div>
+      </div>
     </header>
     <section class="feature-set">
       <ul class="feature-list">
@@ -29,35 +43,40 @@
           </i>
           <span>Progress Track</span>
         </li>
+        <li>
+          <i>
+            <img src="tick.svg" />
+          </i>
+          <span>Touch Enabled</span>
+        </li>
       </ul>
     </section>
     <div class="router-container">
       <router-view />
     </div>
-    <!-- <section>
-      <div class="github">
-        <a href="">GitHub</a>
-      </div>
-      <div class="copyrights">
-        <span>&copy;</span> <a href="">prabhumurthy.com</a>
-      </div>
-    </section> -->
   </div>
 </template>
 
 
 <script lang="ts">
 import Vue from "vue";
+import GithubIcon from "vue-ionicons/dist/logo-github.vue";
+import Heart from "vue-ionicons/dist/ios-heart.vue";
 
-export default Vue.extend({});
+export default Vue.extend({
+  components: {
+    GithubIcon,
+    Heart,
+  },
+});
 </script>
 
 <style lang="scss">
 .router-container {
-  width: 65%;
+  width: 60%;
 }
 .feature-set {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 .feature-list {
   display: flex;
@@ -94,16 +113,22 @@ export default Vue.extend({});
   margin: 0;
   padding: 1rem 0;
   font-family: "Montserrat", sans-serif;
-  color: #000;
+  color: #fff;
   font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4rem;
 
   .header {
-    margin-bottom: 3rem;
+    white-space: nowrap;
+    margin: 1rem 0;
+    text-shadow: 1px 1px 1px #464646;
   }
 }
-footer {
+.social {
   display: flex;
-  margin-top: 1rem;
   font-size: 1.25rem;
   width: 100%;
   align-items: center;
@@ -111,17 +136,25 @@ footer {
 
   a {
     text-decoration: none;
-    color: #fff;
+    color: #000;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      margin-right: 0.5rem;
+    }
   }
 
   .github {
     margin-right: 2rem;
+    fill: #0F52BA;
   }
   .copyrights {
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    fill: #e31b23;
   }
 }
 #app {
@@ -134,7 +167,7 @@ footer {
 
   align-items: center;
   justify-content: flex-start;
-  height: 100%;
+  min-height: 1600px;
 
   /* background: #acb6e5; */
   background: #6190e8; /* fallback for old browsers */
