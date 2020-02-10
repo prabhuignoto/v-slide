@@ -14,7 +14,7 @@
           </i>
           <div class="feature-content">
             <span>Slide Preview</span>
-            <p>The Slide preview controls allows to quickly peek through all the slides.</p>
+            <p>The Slide preview control allows to quickly peek through all the slides without needing to click through every slide.</p>
           </div>
         </li>
         <li>
@@ -91,8 +91,8 @@ import Heart from "vue-ionicons/dist/ios-heart.vue";
 export default Vue.extend({
   components: {
     GithubIcon,
-    Heart
-  }
+    Heart,
+  },
 });
 </script>
 
