@@ -85,7 +85,7 @@ $container-shadow: 0 0 6px 2px rgba($color: #000, $alpha: .1);
 
   &.isPreviewPaneOpen {
     animation: minimize-slide .4s linear;
-    height: calc(100%-14rem);
+    height: calc(100%-10rem);
   }
 
   &.isPreviewPaneClosed {
@@ -129,7 +129,7 @@ $container-shadow: 0 0 6px 2px rgba($color: #000, $alpha: .1);
   }
 
   100% {
-    height: calc(100%-14rem);
+    height: calc(100%-10rem);
   }
 }
 @keyframes maximize-slide {
@@ -138,7 +138,7 @@ $container-shadow: 0 0 6px 2px rgba($color: #000, $alpha: .1);
   }
 
   0% {
-    height: calc(100%-14rem);
+    height: calc(100%-10rem);
   }
 }
 
@@ -148,13 +148,13 @@ $container-shadow: 0 0 6px 2px rgba($color: #000, $alpha: .1);
   }
 
   100% {
-    height: 14rem;
+    height: 10rem;
   }
 }
 
 @keyframes hide {
   0% {
-    height: 14rem;
+    height: 10rem;
   }
 
   100% {
@@ -183,7 +183,7 @@ $container-shadow: 0 0 6px 2px rgba($color: #000, $alpha: .1);
   border-radius: .3rem;
   bottom: 1rem;
   display: flex;
-  height: 14rem;
+  height: 10rem;
   justify-content: center;
   margin-top: 1rem;
   overflow: hidden;

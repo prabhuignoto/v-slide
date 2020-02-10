@@ -33,7 +33,16 @@
   margin: 0 auto;
 
   @media (min-width: 1281px) {
-    height: 850px;
+    height: 680px;
+  }
+
+  @media screen and (min-width: 1400px) {
+  }
+
+  @media screen and (min-width: 1600px) {
+  }
+
+  @media screen and (min-width: 1900px) {
   }
 
   @media (min-width: 1025px) and (max-width: 1280px) {
@@ -41,11 +50,11 @@
   }
 
   @media (min-width: 768px) and (max-width: 1024px) {
-   height: 680px;
+    height: 400px;
   }
 
   @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-   height: 600px;
+    height: 500px;
   }
 }
 </style>

@@ -3,18 +3,18 @@
     <ul class="v-slideshow-controls">
       <li v-if="paused">
         <button @click="togglePlay">
-          <IosPlayIcon w="2rem" h="2rem" :style="{fill: iconColor()}" />
+          <IosPlayIcon w="1.65rem" h="1.65rem" :style="{fill: iconColor()}" />
         </button>
       </li>
       <li v-else>
         <button @click="togglePlay">
-          <IosPauseIcon w="2rem" h="2rem" :style="{fill: iconColor(true)}" />
+          <IosPauseIcon w="1.65rem" h="1.65rem" :style="{fill: iconColor(true)}" />
         </button>
       </li>
       <li>
         <transition name="fade">
           <button @click="togglePreviewPane" v-show="paused">
-            <IosPhotosIcon w="2rem" h="2rem" :style="{fill: iconColor(this.previewPaneOpen)}" />
+            <IosPhotosIcon w="1.65rem" h="1.65rem" :style="{fill: iconColor(this.previewPaneOpen)}" />
           </button>
         </transition>
       </li>

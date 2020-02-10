@@ -4,6 +4,22 @@
     width: 75%;
   }
 
+  @media screen and (min-width: 1600px), screen and (min-width: 1400px) {
+    width: 70%;
+  }
+
+  @media screen and (min-width: 1900px) {
+    width: 60%;
+  }
+
+  @media screen and (min-width: 2560px) {
+    width: 50%;
+  }
+
+  @media screen and (min-width: 3840px) {
+    width: 30%;
+  }
+
   @media (min-width: 1025px) and (max-width: 1280px) {
     width: 75%;
   }
@@ -16,9 +32,6 @@
     width: 85%;
   }
 
-  @media screen and (min-width: 1600px), screen and (min-width: 1400px) {
-    width: 50%;
-  }
 }
 
 .router-container {
@@ -26,18 +39,49 @@
 }
 
 .feature-set {
-  @include width;
+  // @include width;
   align-items: center;
   display: flex;
   justify-content: center;
-  margin: 2rem 0;
-  width: 100%;
+  margin: 4rem 0;
+  width: 60%;
+  @media (min-width: 1281px) {
+    width: 90%;
+  }
+
+  @media screen and (min-width: 1600px), screen and (min-width: 1400px) {
+    width: 90%;
+  }
+
+  @media screen and (min-width: 1900px) {
+    width: 80%;
+  }
+
+  @media screen and (min-width: 2560px) {
+    width: 65%;
+  }
+
+  @media screen and (min-width: 3840px) {
+    width: 40%;
+  }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    width: 90%;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    width: 80%;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    width: 95%;
+  }
 }
 
 .feature-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 200px);
   list-style: none;
   margin: 0 auto;
   padding: 0;
@@ -134,7 +178,7 @@
     justify-content: center;
 
     span {
-      margin-right: 0.5rem;
+      margin-right: .5rem;
     }
   }
 
@@ -151,7 +195,6 @@
 #app {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  /* background: #acb6e5; */
   align-items: center;
   background: #6190e8; /* fallback for old browsers */
   background-color: #8bc6ec;
