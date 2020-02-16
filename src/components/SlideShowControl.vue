@@ -57,7 +57,7 @@ export default Vue.component("v-slideshow-control", {
       if (state) {
         return "#1e90ff";
       } else {
-        return "#ccc";
+        return "#fff";
       }
     },
   },
