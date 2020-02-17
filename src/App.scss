@@ -42,7 +42,7 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  margin: 4rem 0;
+  margin: 2rem 0;
   width: 60%;
   @media (min-width: 1281px) {
     width: 90%;
@@ -101,7 +101,7 @@
 
     span {
       font-family: "Montserrat", sans-serif;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: 500;
       text-transform: uppercase;
       white-space: nowrap;
@@ -138,7 +138,7 @@
       justify-content: flex-start;
 
       p {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         font-weight: 400;
         text-align: left;
       }
@@ -168,10 +168,10 @@
 .social {
   align-items: center;
   display: flex;
-  font-size: 1.25rem;
+  font-size: 1rem;
   justify-content: center;
-  width: 100%;
   margin-bottom: 2rem;
+  width: 100%;
 
   a {
     color: #000;
@@ -231,4 +231,8 @@
 body {
   margin: 0;
   padding: 0;
+}
+
+.code-previews {
+  margin: 2rem 0 3rem 0;
 }

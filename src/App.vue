@@ -23,7 +23,7 @@
           </i>
           <div class="feature-content">
             <span>Auto Play</span>
-            <p>The Auto play features lets you loop through the slides and lets you to pause and resume slideshow.</p>
+            <p>The Auto play features lets you loop through the slides and lets you pause and resume slideshow's.</p>
           </div>
         </li>
         <li>
@@ -50,7 +50,7 @@
           </i>
           <div class="feature-content">
             <span>Touch Enabled</span>
-            <p>V-Slide comes with support for gestures. Powered by Hammer.JS slides can be navigated by swiping left or right.</p>
+            <p>V-Slide comes with support for gestures. Powered by Hammer.JS, slides can be navigated by swiping left or right.</p>
           </div>
         </li>
         <li>
@@ -59,10 +59,14 @@
           </i>
           <div class="feature-content">
             <span>Powered by Vue</span>
-            <p>V-Slide comes is built with Vue and meant to be used as a plugin on any existing Vue projects with ease.</p>
+            <p>V-Slide is built with Vue and meant to be used as a plugin on any existing Vue projects with ease.</p>
           </div>
         </li>
       </ul>
+    </section>
+
+    <section class="code-previews">
+      <img src="code-preview-1.svg" alt="code preview" :style="{width: '680px'}">
     </section>
 
     <div class="social">
