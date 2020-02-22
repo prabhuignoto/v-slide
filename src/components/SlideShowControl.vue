@@ -47,7 +47,7 @@ export default Vue.component("v-slideshow-control", {
       paused: true,
       previewPaneOpen: false,
       icon: {
-        dimension: "1.65rem",
+        dimension: "1.25rem",
         color: {
           active: "#1e90ff",
           inActive: "#1e90ff",

@@ -52,10 +52,6 @@ $preview-btn-shadow: 0 0 10px 4px rgba($color: #000, $alpha: .2);
     overflow: hidden;
     width: 12rem;
 
-    &.active {
-      // box-shadow: $active-pane-shadow;
-    }
-
     & > img {
       background-position: 50% 50%;
       background-repeat: no-repeat;
@@ -70,13 +66,12 @@ $preview-btn-shadow: 0 0 10px 4px rgba($color: #000, $alpha: .2);
 .slide-preview-btn {
   background: $white;
   border: 0;
-  // box-shadow: $preview-btn-shadow;
   cursor: pointer;
   height: 100%;
   margin: 0;
   outline: none;
   padding: 0;
-  width: 3rem;
+  width: 2rem;
 
   svg {
     fill: $blue;
