@@ -33,7 +33,8 @@
   margin: 0 auto;
 
   @media (min-width: 1281px) {
-    height: 580px;
+    height: 500px;
+    width: 80%;
   }
 
   @media screen and (min-width: 1400px) {
