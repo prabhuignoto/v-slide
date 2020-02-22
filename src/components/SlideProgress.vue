@@ -1,5 +1,5 @@
 <template>
-  <div class="slide-progress-container">
+  <div class="slide-progress-wrapper">
     <span :style="{width: `${this.progress}`}"></span>
   </div>
 </template>

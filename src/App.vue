@@ -10,7 +10,7 @@
       <ul class="feature-list">
         <li>
           <i>
-            <img src="tick.svg" />
+            <img src="slideshow.svg" />
           </i>
           <div class="feature-content">
             <span>Slide Preview</span>
@@ -19,7 +19,7 @@
         </li>
         <li>
           <i>
-            <img src="tick.svg" />
+            <img src="play.svg" />
           </i>
           <div class="feature-content">
             <span>Auto Play</span>
@@ -28,7 +28,7 @@
         </li>
         <li>
           <i>
-            <img src="tick.svg" />
+            <img src="responsive.svg" />
           </i>
           <div class="feature-content">
             <span>Responsive</span>
@@ -37,7 +37,7 @@
         </li>
         <li>
           <i>
-            <img src="tick.svg" />
+            <img src="progress.svg" />
           </i>
           <div class="feature-content">
             <span>Progress Tracker</span>
@@ -46,7 +46,7 @@
         </li>
         <li>
           <i>
-            <img src="tick.svg" />
+            <img src="touch.svg" />
           </i>
           <div class="feature-content">
             <span>Touch Enabled</span>
@@ -55,7 +55,7 @@
         </li>
         <li>
           <i>
-            <img src="tick.svg" />
+            <img src="vue.svg" />
           </i>
           <div class="feature-content">
             <span>Powered by Vue</span>

@@ -95,7 +95,9 @@ $container-shadow: 0 0 6px 2px rgba($color: #000, $alpha: .1);
 }
 
 .slide-progress-container {
-  margin: 1rem 0;
+  align-items: center;
+  display: flex;
+  height: 2rem;
 }
 
 .slider-control-container {

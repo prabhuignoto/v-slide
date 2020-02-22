@@ -3,18 +3,22 @@
     <ul class="v-slideshow-controls">
       <li v-if="paused">
         <button @click="togglePlay">
-          <IosPlayIcon w="1.65rem" h="1.65rem" :style="{fill: iconColor()}" />
+          <IosPlayIcon :w="icon.dimension" :h="icon.dimension" :style="{fill: iconColor()}" />
         </button>
       </li>
       <li v-else>
         <button @click="togglePlay">
-          <IosPauseIcon w="1.65rem" h="1.65rem" :style="{fill: iconColor(true)}" />
+          <IosPauseIcon :w="icon.dimension" :h="icon.dimension" :style="{fill: iconColor(true)}" />
         </button>
       </li>
       <li>
         <transition name="fade">
           <button @click="togglePreviewPane" v-show="paused">
-            <IosPhotosIcon w="1.65rem" h="1.65rem" :style="{fill: iconColor(this.previewPaneOpen)}" />
+            <IosPhotosIcon
+              :w="icon.dimension"
+              :h="icon.dimension"
+              :style="{fill: iconColor(this.previewPaneOpen)}"
+            />
           </button>
         </transition>
       </li>
@@ -23,7 +27,7 @@
 </template>
 
 <style lang="scss">
-  @import "@/styles/slideshow-control";
+@import "@/styles/slideshow-control";
 </style>
 
 <script lang="ts">
@@ -42,6 +46,13 @@ export default Vue.component("v-slideshow-control", {
     return {
       paused: true,
       previewPaneOpen: false,
+      icon: {
+        dimension: "1.65rem",
+        color: {
+          active: "#1e90ff",
+          inActive: "#1e90ff",
+        },
+      },
     };
   },
   methods: {
@@ -54,11 +65,8 @@ export default Vue.component("v-slideshow-control", {
       this.$emit("previewPane", this.previewPaneOpen);
     },
     iconColor(state?: boolean) {
-      if (state) {
-        return "#1e90ff";
-      } else {
-        return "#fff";
-      }
+      const { active, inActive } = this.icon.color;
+      return state ? active : inActive;
     },
   },
 });
