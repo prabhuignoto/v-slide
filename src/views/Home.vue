@@ -61,7 +61,6 @@
 </style>
 
 <script lang="ts">
-// @ is an alias to /src
 import Slides from "@/components/Slides.vue";
 
 import Vue from "vue";
@@ -69,7 +68,7 @@ import Vue from "vue";
 export default {
   name: "home",
   components: {
-    Slides,
-  },
+    Slides
+  }
 };
 </script>

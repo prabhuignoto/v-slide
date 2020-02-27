@@ -1,10 +1,10 @@
 # Welcome to v-slide 👋
 
-[![Twitter: prabhumurthy](https://img.shields.io/twitter/follow/prabhumurthy.svg?style=social)](https://twitter.com/prabhumurthy)
-
-> A simple Carousel built for Humans
+> A simple Carousel for Vue
 
 ## ✨[Demo](http://v-slide.netlify.com)
+
+![web-home](./public/web-home.jpg)
 
 ## Install
 
