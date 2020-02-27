@@ -1,17 +1,17 @@
 <template>
   <div class="v-slideshow-container">
     <ul class="v-slideshow-controls">
-      <li v-if="paused">
+      <li v-if="autoplay && paused">
         <button @click="togglePlay">
           <IosPlayIcon :w="icon.dimension" :h="icon.dimension" :style="{fill: iconColor()}" />
         </button>
       </li>
-      <li v-else>
+      <li v-else-if="autoplay && !paused">
         <button @click="togglePlay">
           <IosPauseIcon :w="icon.dimension" :h="icon.dimension" :style="{fill: iconColor(true)}" />
         </button>
       </li>
-      <li>
+      <li v-if="preview">
         <transition name="fade">
           <button @click="togglePreviewPane" v-show="paused">
             <IosPhotosIcon
@@ -41,6 +41,10 @@ export default Vue.component("v-slideshow-control", {
     IosPauseIcon,
     IosPlayIcon,
     IosPhotosIcon,
+  },
+  props: {
+    autoplay: Boolean,
+    preview: Boolean,
   },
   data() {
     return {

@@ -1,6 +1,12 @@
 <template>
   <div class="home">
-    <v-slides :isCircular="true" :slideShowSpeed="2000">
+    <v-slides
+      :isCircular="true"
+      :slideShowSpeed="2000"
+      :autoplay="false"
+      :preview="false"
+      :touchEnabled="true"
+    >
       <img
         :src="'https://images.unsplash.com/photo-1581094935665-144e76b36c25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjc5NjV9&auto=format&fit=crop&w=1950&q=80'"
       />
@@ -19,9 +25,12 @@
       <img
         :src="'https://images.unsplash.com/photo-1581055926932-df1b377bedde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80'"
       />
-      <img
+      <p>
+        This is a test
+      </p>
+      <!-- <img
         :src="'https://images.unsplash.com/photo-1580962423295-fc5150ac004f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'"
-      />
+      /> -->
     </v-slides>
   </div>
 </template>

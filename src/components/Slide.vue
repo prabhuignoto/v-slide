@@ -36,6 +36,7 @@ export default Vue.component("v-slide", {
     const container: HTMLElement = this.$refs.container as HTMLElement;
     if (container) {
       const img = container.querySelector("img") as HTMLElement;
+      debugger;
       img.onload = () => {
         this.hasLoaded = true;
       };
