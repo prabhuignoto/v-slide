@@ -109,10 +109,9 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 220px);
   }
-  // background: #fff;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 200px);
+  grid-template-rows: repeat(2, 230px);
   list-style: none;
   margin: 0 auto;
   padding: 2rem;
@@ -120,10 +119,9 @@
 
   li {
     align-items: flex-start;
-    background: #fff;
-    // background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(220,217,249,1) 0%, rgba(172,224,217,1) 89.8% );
-    border-radius: 0.2rem;
-    box-shadow: 0 0 8px 4px rgba($color: #000, $alpha: 0.1);
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    border-radius: 1rem;
+    /* box-shadow: 0 0 8px 4px rgba($color: #000, $alpha: 0.1); */
     display: flex;
     margin: 1rem;
     padding: 1rem;
@@ -134,6 +132,7 @@
       font-weight: 500;
       text-transform: uppercase;
       white-space: nowrap;
+      color: #1e90ff;
       @media (min-width: 1025px) and (max-width: 1280px),
         (min-width: 768px) and (max-width: 1024px) {
         font-size: 1rem;

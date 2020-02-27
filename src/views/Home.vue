@@ -25,12 +25,9 @@
       <img
         :src="'https://images.unsplash.com/photo-1581055926932-df1b377bedde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80'"
       />
-      <p>
-        This is a test
-      </p>
-      <!-- <img
+      <img
         :src="'https://images.unsplash.com/photo-1580962423295-fc5150ac004f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'"
-      /> -->
+      />
     </v-slides>
   </div>
 </template>
@@ -77,7 +74,7 @@ import Vue from "vue";
 export default {
   name: "home",
   components: {
-    Slides
-  }
+    Slides,
+  },
 };
 </script>

@@ -109,16 +109,16 @@ export default Vue.component("v-slides", {
     slideShowSpeed: Number,
     autoplay: {
       type: Boolean,
-      default: false
+      default: false,
     },
     preview: {
       type: Boolean,
-      default: false
+      default: false,
     },
     touchEnabled: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   components: {
     Slide,
@@ -127,7 +127,7 @@ export default Vue.component("v-slides", {
     SlideShowControl,
     SlidePreviewPane,
     IosArrowBackIcon,
-    IosArrowForwardIcon
+    IosArrowForwardIcon,
   },
   data(): ISlideData {
     return {
@@ -137,7 +137,7 @@ export default Vue.component("v-slides", {
       isSlideshowRunning: false,
       isPreviewPaneOpen: false,
       intervalHandle: null,
-      canShowNavControls: false
+      canShowNavControls: false,
     };
   },
   mounted() {
@@ -152,8 +152,8 @@ export default Vue.component("v-slides", {
             (val, index) => ({
               id: nanoid(),
               node: slotContents[index],
-              isVisible: index === 0
-            })
+              isVisible: index === 0,
+            }),
           );
           while (slotsWrapper.firstChild) {
             slotsWrapper.removeChild(slotsWrapper.firstChild);
@@ -176,7 +176,7 @@ export default Vue.component("v-slides", {
       } else {
         return true;
       }
-    }
+    },
   },
   methods: {
     autoPlay() {
@@ -190,7 +190,7 @@ export default Vue.component("v-slides", {
       this.activeSlide = this.activeSlide + idx;
       this.slides = this.slides.map((slide, index) => {
         return Object.assign({}, slide, {
-          isVisible: this.activeSlide === index
+          isVisible: this.activeSlide === index,
         });
       });
     },
@@ -226,7 +226,7 @@ export default Vue.component("v-slides", {
     },
     handlePreviewPane(open: boolean) {
       this.isPreviewPaneOpen = open;
-    }
-  }
+    },
+  },
 });
 </script>

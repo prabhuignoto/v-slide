@@ -3,8 +3,7 @@
     <div class="loader-wrapper" v-if="!hasLoaded">
       <loader></loader>
     </div>
-    <div class="image-slot-container" v-html="htmlContent" v-show="hasLoaded">
-    </div>
+    <div class="image-slot-container" v-html="htmlContent" v-show="hasLoaded"></div>
   </div>
 </template>
 
@@ -36,10 +35,13 @@ export default Vue.component("v-slide", {
     const container: HTMLElement = this.$refs.container as HTMLElement;
     if (container) {
       const img = container.querySelector("img") as HTMLElement;
-      debugger;
-      img.onload = () => {
+      if (img) {
+        img.onload = () => {
+          this.hasLoaded = true;
+        };
+      } else {
         this.hasLoaded = true;
-      };
+      }
     }
   },
 });

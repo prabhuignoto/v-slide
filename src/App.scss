@@ -16,7 +16,7 @@
   margin: 0;
 
   .header {
-    margin: 1rem 0;
+    margin: 2rem 0;
     text-shadow: 1px 1px 1px #464646;
     white-space: nowrap;
   }
@@ -31,8 +31,8 @@
   flex-direction: column;
   font-family: "Montserrat", sans-serif;
   justify-content: flex-start;
-  min-height: 1600px;
-  overflow-y: auto;
+  min-height: 2800px;
+  // overflow-y: auto;
   text-align: center;
 }
 
