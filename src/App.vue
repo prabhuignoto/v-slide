@@ -104,8 +104,11 @@ export default Vue.extend({
 
 <style lang="scss">
 @import "./App.scss";
+@import "./common.scss";
+
 .app-demos {
-  width: 50%;
+  @include width;
+  /* width: 50%; */
   margin-bottom: 5rem;
 }
 .demo {

@@ -119,7 +119,8 @@
 
   li {
     align-items: flex-start;
-    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    /* background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%); */
     border-radius: 1rem;
     /* box-shadow: 0 0 8px 4px rgba($color: #000, $alpha: 0.1); */
     display: flex;
