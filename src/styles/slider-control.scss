@@ -9,7 +9,7 @@
   padding: 0;
 
   .slider-control-bubble {
-    background: #e2e2e2;
+    background: $alto;
     border-radius: 50%;
     cursor: pointer;
     display: block;
@@ -19,7 +19,7 @@
     width: .5rem;
 
     &.active {
-      background: $blue;
+      background: $dodger-blue;
       transform: scale(1.2);
     }
   }

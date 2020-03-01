@@ -43,7 +43,7 @@ $container-shadow: 0 0 6px 2px rgba($color: #000, $alpha: .1);
   }
 
   svg {
-    fill: $blue;
+    fill: $dodger-blue;
   }
 }
 
@@ -52,7 +52,7 @@ $container-shadow: 0 0 6px 2px rgba($color: #000, $alpha: .1);
 }
 
 .slides-container {
-  background: #fff;
+  background: $white;
   border: 1px solid $d2-gray;
   border-radius: .25rem;
   box-shadow: $container-shadow;

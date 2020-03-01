@@ -1,13 +1,13 @@
 @import './palette';
 
 .slide-progress-wrapper {
-  background: #e2e2e2;
+  background: $alto;
   border-radius: .2rem;
   height: .25rem;
   width: 100%;
 
   span {
-    background: $blue;
+    background: $dodger-blue;
     border-radius: .2rem;
     display: block;
     height: 100%;

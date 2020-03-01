@@ -8,12 +8,12 @@
     </div>
     <social></social>
     <site-features></site-features>
-    <!-- <section class="code-previews">
-      <img src="code-preview-1.svg" alt="code preview" :style="{width: '600px'}">
-    </section>-->
     <section class="app-demos">
       <div class="demo">
         <h3>Basic Setup</h3>
+        <p class="description">
+          Wrap your elements with v-slide and you are good to go. v-slide slices out the HTML content and make sure they go in separate slides.
+        </p>
         <div class="demo-container">
           <div class="code-snippet">
             <v-slides :isCircular="true" :autoplay="false" :preview="false" :touchEnabled="false">
@@ -33,6 +33,9 @@
     <section class="app-demos">
       <div class="demo">
         <h3>Auto Play</h3>
+          <p class="description">
+            V-Slide can be set to run in Autoplay mode by setting the autoplay prop.
+          </p>
         <div class="demo-container">
           <div class="code-snippet">
             <v-slides :isCircular="true" :autoplay="true" :preview="false" :touchEnabled="false">
@@ -50,6 +53,9 @@
     <section class="app-demos">
       <div class="demo">
         <h3>Previews</h3>
+        <p class="description">
+          The previews allow you to quicky take a peek on all the slides. V-Slide is smart enough to render mixed contents. for e.g you can mix images and plain text content.
+        </p>
         <div class="demo-container">
           <div class="code-snippet">
             <v-slides :isCircular="true" :autoplay="false" :preview="true" :touchEnabled="false">
@@ -71,6 +77,7 @@
     <section class="app-demos">
       <div class="demo">
         <h3>Touch Enabled</h3>
+        <p class="description">V-Slide comes with full touch support powered by Hammer</p>
         <div class="demo-container">
           <div class="code-snippet">
             <v-slides :isCircular="true" :autoplay="true" :preview="false" :touchEnabled="true">
@@ -108,7 +115,6 @@ export default Vue.extend({
 
 .app-demos {
   @include width;
-  /* width: 50%; */
   margin-bottom: 5rem;
 }
 .demo {
@@ -117,13 +123,23 @@ export default Vue.extend({
   padding: 0.5rem 1rem 2rem;
   box-shadow: inset 0 0 6px 3px rgba(0, 0, 0, 0.1);
 
-  
+  .description {
+    width: 95%;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 200;
+    text-align: left;
+    margin: .5rem .5rem 1rem;
+    margin-left: 1rem;
+    text-shadow: 2px 0px 3px rgba(0,0,0,0.5);
+    font-size: 1.1rem;
+  }
 
   h3 {
     width: 100%;
     text-align: left;
     margin: 0;
-    height: 2.75rem;
+    height: 2rem;
     color: #fff;
     display: flex;
     align-items: center;
@@ -133,6 +149,7 @@ export default Vue.extend({
     border-radius: 4px;
     font-size: 1.2rem;  
     padding-left: 1rem;
+    text-shadow: 2px 0px 3px rgba(0,0,0,0.5);
     text-transform: uppercase;
     @media (min-width: 768px) and (max-width: 1024px) {
       margin-bottom: 2rem;

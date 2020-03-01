@@ -24,7 +24,6 @@
 
 #app {
   align-items: center;
-  background: #83a4d4;
   background: linear-gradient(to right, #b6fbff, #83a4d4);
   color: #2c3e50;
   display: flex;
@@ -34,19 +33,6 @@
   min-height: 2800px;
   // overflow-y: auto;
   text-align: center;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    color: #2c3e50;
-    font-weight: bold;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
 }
 
 body {
