@@ -63,6 +63,16 @@
   @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     height: 500px;
   }
+
+  @media only screen and (max-width: 600px) {
+    height: 400px;
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 768px) {
+    height: 400px;
+  }
+
+  
 }
 </style>
 

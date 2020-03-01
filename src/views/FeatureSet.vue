@@ -60,8 +60,8 @@
 </template>
 
 <script>
-  import Vue from "vue";
-  export default { name: "site-features" };
+import Vue from "vue";
+export default { name: "site-features" };
 </script>
 
 <style lang="scss" scoped>
@@ -102,12 +102,28 @@
   @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     width: 95%;
   }
+
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 768px) {
+    width: 90%;
+  }
 }
 
 .feature-list {
   @media (min-width: 768px) and (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 220px);
+  }
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(auto, 220px);
+  }
+  @media only screen and (min-width: 600px) and (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto, 220px);
   }
   display: grid;
   grid-template-columns: repeat(3, 1fr);

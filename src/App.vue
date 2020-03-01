@@ -156,7 +156,7 @@ h3 {
 .demo {
   background: rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  padding: 1rem;
+  padding: 2rem;
   box-shadow: inset 0 0 6px 3px rgba(0, 0, 0, 0.1);
 
   .demo-container {
@@ -172,13 +172,32 @@ h3 {
       margin: 0 auto;
     }
 
+    @media only screen and (max-width: 600px) {
+      flex-direction: column;
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    @media only screen and (min-width: 600px) and (max-width: 768px) {
+      flex-direction: column;
+      width: 90%;
+      margin: 0 auto;
+    }
+
     .code-snippet {
       @media (min-width: 768px) and (max-width: 1024px) {
         width: 90%;
       }
+      @media only screen and (max-width: 600px) {
+        width: 90%;
+      }
+      @media only screen and (min-width: 600px) and (max-width: 768px) {
+        width: 95%;
+      }
+      
       flex: 1;
       height: 350px;
-      margin-left: 1rem;
+      /* margin-left: 1rem; */
     }
     .carbon {
       flex: 1;

@@ -31,4 +31,20 @@
   @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     width: 85%;
   }
+
+  @media only screen and (max-width: 600px) {
+    width: 90%;
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 768px) {
+    width: 90%;
+  }
+
+  // @media only screen and (max-width: 600px) {
+  //   border: 1px solid red;
+  // }
+
+  // @media only screen and (min-width: 600px) {
+  //   border: 1px solid yellow;
+  // }
 }
