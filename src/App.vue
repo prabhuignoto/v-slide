@@ -6,6 +6,7 @@
     <div class="router-container">
       <router-view />
     </div>
+    <social></social>
     <site-features></site-features>
     <!-- <section class="code-previews">
       <img src="code-preview-1.svg" alt="code preview" :style="{width: '600px'}">
@@ -84,7 +85,6 @@
         </div>
       </div>
     </section>
-    <social></social>
   </div>
 </template>
 
@@ -117,6 +117,8 @@ export default Vue.extend({
   padding: 0.5rem 1rem 2rem;
   box-shadow: inset 0 0 6px 3px rgba(0, 0, 0, 0.1);
 
+  
+
   h3 {
     width: 100%;
     text-align: left;
@@ -129,8 +131,14 @@ export default Vue.extend({
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     border-radius: 4px;
-    font-size: 1.2rem;
+    font-size: 1.2rem;  
     padding-left: 1rem;
+    text-transform: uppercase;
+    @media (min-width: 768px) and (max-width: 1024px) {
+      margin-bottom: 2rem;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
   }
 
   .demo-container {
@@ -140,7 +148,16 @@ export default Vue.extend({
     width: 100%;
     height: 100%;
 
+    @media (min-width: 768px) and (max-width: 1024px) {
+      flex-direction: column;
+      width: 90%;
+      margin: 0 auto;
+    }
+
     .code-snippet {
+      @media (min-width: 768px) and (max-width: 1024px) { 
+        width: 90%;
+      }
       flex: 1;
       height: 350px;
       margin-left: 1rem;

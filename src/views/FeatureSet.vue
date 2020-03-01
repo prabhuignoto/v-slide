@@ -69,7 +69,7 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  margin: 2rem 0;
+  margin-bottom: 2rem;
   width: 60%;
   @media (min-width: 1281px) {
     width: 90%;

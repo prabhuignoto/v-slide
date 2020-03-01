@@ -33,9 +33,9 @@ export default {
 .social {
   align-items: center;
   display: flex;
-  font-size: 1rem;
+  font-size: 1.2rem;
   justify-content: center;
-  margin: 6rem 0 2rem 0;
+  margin: 2rem 0;
   width: 100%;
 
   a {
