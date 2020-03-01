@@ -60,12 +60,12 @@
     </div>
     <transition name="fade">
       <button v-on:click="handlePrevious" class="v-slide-btn prev" v-if="canShowPrevious">
-        <IosArrowBackIcon :style="{fill: '#fff'}" class="v-slide-icon" />
+        <IosArrowBackIcon :style="{fill: '#1e90ff'}" class="v-slide-icon" />
       </button>
     </transition>
     <transition name="fade">
       <button v-on:click="handleNext" class="v-slide-btn next" v-if="canShowNext">
-        <IosArrowForwardIcon :style="{fill: '#fff'}" class="v-slide-icon" />
+        <IosArrowForwardIcon :style="{fill: '#1e90ff'}" class="v-slide-icon" />
       </button>
     </transition>
   </div>
