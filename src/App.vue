@@ -187,17 +187,20 @@ h3 {
     .code-snippet {
       @media (min-width: 768px) and (max-width: 1024px) {
         width: 90%;
+        max-width: 100%;
       }
       @media only screen and (max-width: 600px) {
         width: 90%;
+        max-width: 100%;
       }
       @media only screen and (min-width: 600px) and (max-width: 768px) {
         width: 95%;
+        max-width: 100%;
       }
       
       flex: 1;
       height: 350px;
-      /* margin-left: 1rem; */
+      max-width: 50%;
     }
     .carbon {
       flex: 1;
