@@ -4,7 +4,7 @@
 
 ## ✨[Demo](http://v-slide.netlify.com)
 
-![web-home](./public/web-home.jpg)
+![web-home](./public/demo.gif)
 
 ## Install
 
@@ -28,7 +28,7 @@ The previews allow you to quickly take a peek on all the slides. V-Slide is smar
 
 ### Touch Enabled
 
-V-Slide comes with full touch support powered by Hammer
+V-Slide comes with touch support.
 
 ## Options
 
