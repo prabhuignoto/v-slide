@@ -7,15 +7,26 @@
       <header></header>
       <ul
         class="slides-wrapper"
-        :class="{isPreviewPaneOpen: isPreviewPaneOpen, isPreviewPaneClosed: !isPreviewPaneOpen}"
+        :class="{
+          isPreviewPaneOpen: isPreviewPaneOpen,
+          isPreviewPaneClosed: !isPreviewPaneOpen
+        }"
         ref="slides"
         @keyup.left="handlePrevious"
         @keyup.right="handleNext"
         tabindex="0"
       >
         <v-touch
-          v-on:swipeleft="() => { touchEnabled && handleNext()}"
-          v-on:swiperight="() => {touchEnabled && handlePrevious()}"
+          v-on:swipeleft="
+            () => {
+              touchEnabled && handleNext();
+            }
+          "
+          v-on:swiperight="
+            () => {
+              touchEnabled && handlePrevious();
+            }
+          "
         >
           <li v-for="slide in slides" :key="slide.id">
             <transition name="fade">
@@ -33,13 +44,19 @@
       </ul>
       <transition name="show">
         <div class="slider-preview-pane-container" v-show="isPreviewPaneOpen">
-          <v-slide-preview :slides="slides" @selectedSlide="handleSelectedSlide"></v-slide-preview>
+          <v-slide-preview
+            :slides="slides"
+            @selectedSlide="handleSelectedSlide"
+          ></v-slide-preview>
         </div>
       </transition>
       <footer></footer>
     </div>
     <div class="slide-progress-container">
-      <v-slide-progress :slidesCount="slidesCount" :activeSlide="activeSlide + 1"></v-slide-progress>
+      <v-slide-progress
+        :slidesCount="slidesCount"
+        :activeSlide="activeSlide + 1"
+      ></v-slide-progress>
     </div>
     <div class="slide-control-bar">
       <div class="slideshow-control-container">
@@ -59,13 +76,24 @@
       </div>
     </div>
     <transition name="fade">
-      <button v-on:click="handlePrevious" class="v-slide-btn prev" v-if="canShowPrevious">
-        <IosArrowBackIcon :style="{fill: '#1e90ff'}" class="v-slide-icon" />
+      <button
+        v-on:click="handlePrevious"
+        class="v-slide-btn prev"
+        v-if="canShowPrevious"
+      >
+        <IosArrowBackIcon :style="{ fill: '#1e90ff' }" class="v-slide-icon" />
       </button>
     </transition>
     <transition name="fade">
-      <button v-on:click="handleNext" class="v-slide-btn next" v-if="canShowNext">
-        <IosArrowForwardIcon :style="{fill: '#1e90ff'}" class="v-slide-icon" />
+      <button
+        v-on:click="handleNext"
+        class="v-slide-btn next"
+        v-if="canShowNext"
+      >
+        <IosArrowForwardIcon
+          :style="{ fill: '#1e90ff' }"
+          class="v-slide-icon"
+        />
       </button>
     </transition>
   </div>
@@ -79,7 +107,7 @@
 import Vue from "vue";
 import Slide from "./Slide.vue";
 import SliderControl from "./SliderControl.vue";
-import {nanoid} from "nanoid";
+import { nanoid } from "nanoid";
 import BackIcon from "./icons/BackIcon.vue";
 import SlideProgress from "./SlideProgress.vue";
 import SlideShowControl from "./SlideShowControl.vue";
@@ -109,16 +137,16 @@ export default Vue.component("v-slides", {
     slideShowSpeed: Number,
     autoplay: {
       type: Boolean,
-      default: false,
+      default: false
     },
     preview: {
       type: Boolean,
-      default: false,
+      default: false
     },
     touchEnabled: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   components: {
     Slide,
@@ -127,7 +155,7 @@ export default Vue.component("v-slides", {
     SlideShowControl,
     SlidePreviewPane,
     IosArrowBackIcon,
-    IosArrowForwardIcon,
+    IosArrowForwardIcon
   },
   data(): ISlideData {
     return {
@@ -137,7 +165,7 @@ export default Vue.component("v-slides", {
       isSlideshowRunning: false,
       isPreviewPaneOpen: false,
       intervalHandle: null,
-      canShowNavControls: false,
+      canShowNavControls: false
     };
   },
   mounted() {
@@ -152,8 +180,8 @@ export default Vue.component("v-slides", {
             (val, index) => ({
               id: nanoid(),
               node: slotContents[index],
-              isVisible: index === 0,
-            }),
+              isVisible: index === 0
+            })
           );
           while (slotsWrapper.firstChild) {
             slotsWrapper.removeChild(slotsWrapper.firstChild);
@@ -176,7 +204,7 @@ export default Vue.component("v-slides", {
       } else {
         return true;
       }
-    },
+    }
   },
   methods: {
     autoPlay() {
@@ -190,7 +218,7 @@ export default Vue.component("v-slides", {
       this.activeSlide = this.activeSlide + idx;
       this.slides = this.slides.map((slide, index) => {
         return Object.assign({}, slide, {
-          isVisible: this.activeSlide === index,
+          isVisible: this.activeSlide === index
         });
       });
     },
@@ -226,7 +254,7 @@ export default Vue.component("v-slides", {
     },
     handlePreviewPane(open: boolean) {
       this.isPreviewPaneOpen = open;
-    },
-  },
+    }
+  }
 });
 </script>

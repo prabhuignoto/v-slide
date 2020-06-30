@@ -10,4 +10,3 @@ export interface ISlideView {
   next: () => void;
   previous: () => void;
 }
-

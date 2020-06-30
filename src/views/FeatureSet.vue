@@ -7,7 +7,10 @@
         </i>
         <div class="feature-content">
           <span>Slide Preview</span>
-          <p>The Slide preview control allows to quickly peek through all the slides without needing to click through every slide.</p>
+          <p>
+            The Slide preview control allows to quickly peek through all the
+            slides without needing to click through every slide.
+          </p>
         </div>
       </li>
       <li>
@@ -16,7 +19,10 @@
         </i>
         <div class="feature-content">
           <span>Auto Play</span>
-          <p>The Auto play features lets you loop through the slides and lets you pause and resume slideshow's.</p>
+          <p>
+            The Auto play features lets you loop through the slides and lets you
+            pause and resume slideshow's.
+          </p>
         </div>
       </li>
       <li>
@@ -25,7 +31,10 @@
         </i>
         <div class="feature-content">
           <span>Responsive</span>
-          <p>Built to be responsive and Fluid, the V-Slide will honor the dimensions of the parent container and render accordingly.</p>
+          <p>
+            Built to be responsive and Fluid, the V-Slide will honor the
+            dimensions of the parent container and render accordingly.
+          </p>
         </div>
       </li>
       <li>
@@ -34,7 +43,10 @@
         </i>
         <div class="feature-content">
           <span>Progress Tracker</span>
-          <p>Progress Tracker provides a great visual indication on the overall progress of Slideshows.</p>
+          <p>
+            Progress Tracker provides a great visual indication on the overall
+            progress of Slideshows.
+          </p>
         </div>
       </li>
       <li>
@@ -43,7 +55,10 @@
         </i>
         <div class="feature-content">
           <span>Touch Enabled</span>
-          <p>V-Slide comes with support for gestures. Powered by Hammer.JS, slides can be navigated by swiping left or right.</p>
+          <p>
+            V-Slide comes with support for gestures. Powered by Hammer.JS,
+            slides can be navigated by swiping left or right.
+          </p>
         </div>
       </li>
       <li>
@@ -52,7 +67,10 @@
         </i>
         <div class="feature-content">
           <span>Powered by Vue</span>
-          <p>V-Slide is built with Vue and meant to be used as a plugin on any existing Vue projects with ease.</p>
+          <p>
+            V-Slide is built with Vue and meant to be used as a plugin on any
+            existing Vue projects with ease.
+          </p>
         </div>
       </li>
     </ul>

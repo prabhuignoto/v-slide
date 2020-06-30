@@ -8,25 +8,39 @@
       :touchEnabled="true"
     >
       <img
-        :src="'https://images.unsplash.com/photo-1581094935665-144e76b36c25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjc5NjV9&auto=format&fit=crop&w=1950&q=80'"
+        :src="
+          'https://images.unsplash.com/photo-1581094935665-144e76b36c25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjc5NjV9&auto=format&fit=crop&w=1950&q=80'
+        "
       />
       <img
-        :src="'https://images.unsplash.com/photo-1581105511979-a8840168a1fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'"
+        :src="
+          'https://images.unsplash.com/photo-1581105511979-a8840168a1fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'
+        "
       />
       <img
-        :src="'https://images.unsplash.com/photo-1581175206076-3ba4ac62a6f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'"
+        :src="
+          'https://images.unsplash.com/photo-1581175206076-3ba4ac62a6f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'
+        "
       />
       <img
-        :src="'https://images.unsplash.com/photo-1570470767483-286963cb60cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'"
+        :src="
+          'https://images.unsplash.com/photo-1570470767483-286963cb60cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'
+        "
       />
       <img
-        :src="'https://images.unsplash.com/photo-1581127372434-b074c9f9a4b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'"
+        :src="
+          'https://images.unsplash.com/photo-1581127372434-b074c9f9a4b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'
+        "
       />
       <img
-        :src="'https://images.unsplash.com/photo-1581055926932-df1b377bedde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80'"
+        :src="
+          'https://images.unsplash.com/photo-1581055926932-df1b377bedde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80'
+        "
       />
       <img
-        :src="'https://images.unsplash.com/photo-1580962423295-fc5150ac004f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'"
+        :src="
+          'https://images.unsplash.com/photo-1580962423295-fc5150ac004f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'
+        "
       />
     </v-slides>
   </div>
@@ -71,8 +85,6 @@
   @media only screen and (min-width: 600px) and (max-width: 768px) {
     height: 400px;
   }
-
-  
 }
 </style>
 
@@ -84,7 +96,7 @@ import Vue from "vue";
 export default {
   name: "home",
   components: {
-    Slides,
-  },
+    Slides
+  }
 };
 </script>

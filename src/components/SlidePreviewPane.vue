@@ -13,7 +13,7 @@
         <div
           class="slide-preview-pane"
           v-html="slide.node.outerHTML"
-          :class="{active: activeSlide === index}"
+          :class="{ active: activeSlide === index }"
         ></div>
       </li>
     </ul>
@@ -24,7 +24,7 @@
 </template>
 
 <style lang="scss">
-  @import "@/styles/slide-preview.scss";
+@import "@/styles/slide-preview.scss";
 </style>
 
 <script lang="ts">
@@ -39,14 +39,14 @@ interface ISlide {
 export default Vue.component("v-slide-preview", {
   components: {
     IosArrowBackIcon,
-    IosArrowForwardIcon,
+    IosArrowForwardIcon
   },
   props: {
-    slides: Array,
+    slides: Array
   },
   data() {
     return {
-      activeSlide: 0,
+      activeSlide: 0
     };
   },
   methods: {
@@ -63,7 +63,7 @@ export default Vue.component("v-slide-preview", {
     handleSelection(idx: number) {
       this.$emit("selectedSlide", idx + 1);
       this.activeSlide = idx;
-    },
-  },
+    }
+  }
 });
 </script>

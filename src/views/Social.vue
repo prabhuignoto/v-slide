@@ -10,7 +10,9 @@
       <span>
         <Heart />
       </span>
-      <a href="https://prabhumurthy.netlify.com" target="_blank">prabhumurthy.com</a>
+      <a href="https://prabhumurthy.netlify.com" target="_blank"
+        >prabhumurthy.com</a
+      >
     </div>
   </div>
 </template>
@@ -24,8 +26,8 @@ export default {
   name: "social",
   components: {
     GithubIcon,
-    Heart,
-  },
+    Heart
+  }
 };
 </script>
 

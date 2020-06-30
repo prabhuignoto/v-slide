@@ -10,13 +10,19 @@
     <site-features></site-features>
     <section class="app-demos">
       <h3>Basic Setup</h3>
-      <p
-        class="description"
-      >Wrap your elements with v-slide and you are good to go. v-slide slices out the HTML content and make sure they go in separate slides.</p>
+      <p class="description">
+        Wrap your elements with v-slide and you are good to go. v-slide slices
+        out the HTML content and make sure they go in separate slides.
+      </p>
       <div class="demo">
         <div class="demo-container">
           <div class="code-snippet">
-            <v-slides :isCircular="false" :autoplay="false" :preview="false" :touchEnabled="false">
+            <v-slides
+              :isCircular="false"
+              :autoplay="false"
+              :preview="false"
+              :touchEnabled="false"
+            >
               <p>Slide One</p>
               <p>Slide Two</p>
               <p>Slide Three</p>
@@ -32,13 +38,18 @@
     </section>
     <section class="app-demos">
       <h3>Auto Play</h3>
-      <p
-        class="description"
-      >V-Slide can be set to run in Autoplay mode by setting the autoplay prop.</p>
+      <p class="description">
+        V-Slide can be set to run in Autoplay mode by setting the autoplay prop.
+      </p>
       <div class="demo">
         <div class="demo-container">
           <div class="code-snippet">
-            <v-slides :isCircular="true" :autoplay="true" :preview="false" :touchEnabled="false">
+            <v-slides
+              :isCircular="true"
+              :autoplay="true"
+              :preview="false"
+              :touchEnabled="false"
+            >
               <p>Slide One</p>
               <p>Slide Two</p>
               <p>Slide Three</p>
@@ -52,13 +63,20 @@
     </section>
     <section class="app-demos">
       <h3>Previews</h3>
-      <p
-        class="description"
-      >The previews allow you to quicky take a peek on all the slides. V-Slide is smart enough to render mixed contents. for e.g you can mix images and plain text content.</p>
+      <p class="description">
+        The previews allow you to quicky take a peek on all the slides. V-Slide
+        is smart enough to render mixed contents. for e.g you can mix images and
+        plain text content.
+      </p>
       <div class="demo">
         <div class="demo-container">
           <div class="code-snippet">
-            <v-slides :isCircular="true" :autoplay="false" :preview="true" :touchEnabled="false">
+            <v-slides
+              :isCircular="true"
+              :autoplay="false"
+              :preview="true"
+              :touchEnabled="false"
+            >
               <img
                 src="https://images.unsplash.com/photo-1582786241187-7b2cce9a1c17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
               />
@@ -76,11 +94,18 @@
     </section>
     <section class="app-demos">
       <h3>Touch Enabled</h3>
-      <p class="description">V-Slide comes with full touch support powered by Hammer</p>
+      <p class="description">
+        V-Slide comes with full touch support powered by Hammer
+      </p>
       <div class="demo">
         <div class="demo-container">
           <div class="code-snippet">
-            <v-slides :isCircular="true" :autoplay="true" :preview="false" :touchEnabled="true">
+            <v-slides
+              :isCircular="true"
+              :autoplay="true"
+              :preview="false"
+              :touchEnabled="true"
+            >
               <p>Slide One</p>
               <p>Slide Two</p>
               <p>Slide Three</p>
@@ -95,7 +120,6 @@
   </div>
 </template>
 
-
 <script lang="ts">
 import Vue from "vue";
 import Social from "./views/Social.vue";
@@ -104,8 +128,8 @@ import SiteFeatures from "./views/FeatureSet.vue";
 export default Vue.extend({
   components: {
     Social,
-    SiteFeatures,
-  },
+    SiteFeatures
+  }
 });
 </script>
 
@@ -197,7 +221,7 @@ h3 {
         width: 95%;
         max-width: 100%;
       }
-      
+
       flex: 1;
       height: 350px;
       max-width: 50%;

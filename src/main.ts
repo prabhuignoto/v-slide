@@ -6,15 +6,15 @@ import Slides from "./components/Slides.vue";
 
 // tslint:disable-next-line:no-var-requires
 const VueTouch = require("vue-touch");
-Vue.use(VueTouch, {name: "v-touch"});
+Vue.use(VueTouch, { name: "v-touch" });
 
 Vue.config.productionTip = false;
 
 new Vue({
   router,
   store,
-  render: (h) => h(App),
+  render: h => h(App),
   components: {
-    Slides,
-  },
+    Slides
+  }
 }).$mount("#app");

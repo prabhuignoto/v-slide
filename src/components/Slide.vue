@@ -3,7 +3,11 @@
     <div class="loader-wrapper" v-if="!hasLoaded">
       <loader></loader>
     </div>
-    <div class="image-slot-container" v-html="htmlContent" v-show="hasLoaded"></div>
+    <div
+      class="image-slot-container"
+      v-html="htmlContent"
+      v-show="hasLoaded"
+    ></div>
   </div>
 </template>
 
@@ -20,16 +24,16 @@ import Loader from "./Loader.vue";
 export default Vue.component("v-slide", {
   data() {
     return {
-      hasLoaded: false,
+      hasLoaded: false
     };
   },
   props: {
     id: String,
     previewPaneOpen: Boolean,
-    htmlContent: String,
+    htmlContent: String
   },
   components: {
-    loader: Loader,
+    loader: Loader
   },
   mounted() {
     const container: HTMLElement = this.$refs.container as HTMLElement;
@@ -43,6 +47,6 @@ export default Vue.component("v-slide", {
         this.hasLoaded = true;
       }
     }
-  },
+  }
 });
 </script>
