@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "nanoid": "^3.1.12",
+    "nanoid": "^3.1.31",
     "vue": "^2.6.10",
     "vue-class-component": "^7.2.5",
     "vue-ionicons": "^3.0.5",
